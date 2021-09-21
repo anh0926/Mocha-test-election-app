@@ -140,9 +140,4 @@ class ElectorateManagement {
     load (){
         return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')
     }
-
-
-    
-    
-    
 }
