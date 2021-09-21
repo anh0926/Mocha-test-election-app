@@ -13,9 +13,6 @@ class Candidate {
     setVoteCount(totalVotes){        
         this.vote = totalVotes
     }    
-    // setPercentVote(newPercentVote){
-    //     this.percentVote = newPercentVote
-    // }
 }
 // 1.	Create a whole that acts as a Facade for parts
 class ElectorateManagement {
@@ -49,13 +46,10 @@ class ElectorateManagement {
 
     setCandidateVote(name,totalVotes){
         var aCandidate = this.findCandidate(name);
-        // console.log(`[Candidate info]: ${JSON.stringify(candidateInfo)}`);
         const candidate = new Candidate(aCandidate.id, aCandidate.name);
         candidate.setVoteCount(totalVotes);   
-        // console.log(`Candidate class instance values: ${JSON.stringify(candidate)}`)
         aCandidate.vote = candidate.vote;         
         this.allTotalVotes += candidate.vote; 
-        // console.log(`[anh hoang info]: ${JSON.stringify(findCandidate('Anh Hoang'))}`) 
     }
 
         // 14.	Find a part given a search  (find a candidate by name)
@@ -71,7 +65,6 @@ class ElectorateManagement {
         let allTotalVotes = this.allTotalVotes
         let percentVote = (candidate.vote * 100)/allTotalVotes
         return percentVote 
-        // candidate.setPercentVote(percentVote)
     }
         
         // 5.	Delete a selected part (delete invalid Candidate)
@@ -153,11 +146,3 @@ class ElectorateManagement {
     
     
 }
-
-// var a = new ElectorateManagement();
-// a.addCandidate('Anh');
-// a.addCandidate('Jorge');
-// a.findCandidate('Anh');
-// console.log('all candidate:', a.allCandidates)
-    
-// var b = new Candidate()
